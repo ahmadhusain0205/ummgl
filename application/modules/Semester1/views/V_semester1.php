@@ -4,7 +4,7 @@
             <div class="card-header">
                 <div class="card-body">
                     <button type="button" class="btn btn-sm btn-success shadow mb-4 float-right" data-toggle="modal" data-target="#adminTambahModal">
-                        <i class="fa fa-plus"></i> New Score
+                        <i class="fa fa-plus"></i> New Semester 1
                     </button>
                     <br><br>
                     <div class="table-responsive">
@@ -54,7 +54,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title text-primary" id="exampleModalLabel">Add score</h5>
+                <h5 class="modal-title text-primary" id="exampleModalLabel">Add Semester 1</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -110,7 +110,7 @@ foreach ($semester1 as $se) :
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title text-warning" id="exampleModalLabel">Edit Score</h5>
+                    <h5 class="modal-title text-warning" id="exampleModalLabel">Edit Semester 1</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>

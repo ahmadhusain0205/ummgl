@@ -27,7 +27,7 @@
         <div class="panel panel-default">
             <div class="panel-body easypiechart-panel">
                 <h4>Users</h4>
-                <div class="easypiechart" id="easypiechart-red" data-percent="<?= $this->M_dashboard->get_data('admin')->num_rows(); ?>"><span class="percent"><?= $this->M_dashboard->get_data('admin')->num_rows(); ?> %</span></div>
+                <div class="easypiechart" id="easypiechart-red" data-percent="<?= $this->M_dashboard->get_data('user')->num_rows(); ?>"><span class="percent"><?= $this->M_dashboard->get_data('user')->num_rows(); ?> %</span></div>
             </div>
         </div>
     </div>

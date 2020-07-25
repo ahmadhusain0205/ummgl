@@ -40,9 +40,18 @@
                                             <button type="button" class="btn btn-sm btn-warning shadow mb-4" data-toggle="modal" data-target="#editAdmin<?= $a->id; ?>">
                                                 <i class="fa fa-wrench"></i> Edit
                                             </button>
-                                            <button type="button" class="btn btn-sm btn-danger shadow mb-4" data-toggle="modal" data-target="#deleteAdminModal<?= $a->id; ?>">
-                                                <i class="fa fa-trash"></i> Hapus
-                                            </button>
+                                            <?php
+                                            if ($a->username == $this->session->userdata('username')) {
+                                                echo "<button type='button' class='btn btn-sm btn-dark shadow mb-4'><i class='fa fa-trash'></i> Hapus
+                                            </button>";
+                                            } else {
+                                                echo "<button type='button' class='btn btn-sm btn-danger shadow mb-4' data-toggle='modal' data-target='#deleteAdminModal";
+                                                echo $a->id;
+                                                echo "'>
+                                                <i class='fa fa-trash'></i> Hapus
+                                            </button>";
+                                            }
+                                            ?>
                                         </td>
                                     </tr>
                                 <?php } ?>
