@@ -87,10 +87,10 @@
         } else {
             echo "<li class='parent'>";
         }
-        ?><a data-toggle="collapse" href="#sub-item-1">
-            <em class="fa fa-fw fa-calendar">&nbsp;</em> Semester <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+        ?><a data-toggle="collapse" href="#sub-item-2">
+            <em class="fa fa-fw fa-calendar">&nbsp;</em> Semester <span data-toggle="collapse" href="#sub-item-2" class="icon pull-right"><em class="fa fa-plus"></em></span>
         </a>
-        <ul class="children collapse" id="sub-item-1">
+        <ul class="children collapse" id="sub-item-2">
             <li>
                 <a class="" href="<?= base_url('Semester1'); ?>">
                     <span class="fa fa-fw fa-angle-double-right">&nbsp;</span> Semester 1
