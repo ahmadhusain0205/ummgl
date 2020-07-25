@@ -12,10 +12,10 @@
                             <thead>
                                 <tr>
                                     <th width="1%">No</th>
-                                    <th width="20%">Course</th>
-                                    <th width="20%">SKS</th>
-                                    <th width="20%">Grade</th>
-                                    <th width="20%">Semester</th>
+                                    <th width="50%">Course</th>
+                                    <th width="10%">SKS</th>
+                                    <th width="10%">Grade</th>
+                                    <th width="10%">Semester</th>
                                     <th width="20%">Opsi</th>
                                 </tr>
                             </thead>
