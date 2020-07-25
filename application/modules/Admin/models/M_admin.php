@@ -1,5 +1,5 @@
 <?php
-class M_login extends CI_Model
+class M_admin extends CI_Model
 {
     function get_data($table)
     {
@@ -9,10 +9,6 @@ class M_login extends CI_Model
     {
         $this->db->insert($table, $data);
     }
-    function edit($where, $table)
-    {
-        return $this->db->get_where($table, $where);
-    }
     function update($where, $data, $table)
     {
         $this->db->where($where);
@@ -21,9 +17,5 @@ class M_login extends CI_Model
     function delete($where, $table)
     {
         $this->db->delete($table, $where);
-    }
-    function cek_login($table, $where)
-    {
-        return $this->db->get_where($table, $where);
     }
 }

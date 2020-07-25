@@ -24,6 +24,13 @@
                             <input class="form-control" placeholder="Password" name="password" type="password" required>
                             <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                         </div>
+                        <div class="form-group">
+                            <label for="sebagai">Login Sebagai : </label>
+                            <select name="sebagai" id="sebagai" class="form-control">
+                                <option value="admin">ADMIN</option>
+                                <option value="user">USER</option>
+                            </select>
+                        </div>
                         <button type="submit" class="btn btn-primary">Login</button>
                     </fieldset>
                 </form>

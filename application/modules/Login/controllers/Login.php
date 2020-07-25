@@ -22,23 +22,46 @@ class Login extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
         $username = $this->input->post('username');
         $password = $this->input->post('password');
-        $data_session = array(
-            'username' => $username,
-            'password' => $password
-        );
-        $this->session->set_userdata($data_session);
-        if ($this->form_validation->run() == false) {
-            redirect('Login');
-        } else {
-            $username = $this->input->post('username');
-            $password = $this->input->post('password');
+        $sebagai = $this->input->post('sebagai');
+        if ($this->form_validation->run() != false) {
             $where = array(
                 'username' => $username,
                 'password' => $password
             );
-            $this->M_login->login('user', $where)->num_rows();
-            $this->session->set_userdata($where);
-            redirect('Dashboard');
+            if ($sebagai == 'admin') {
+                $cek = $this->M_login->cek_login('admin', $where)->num_rows();
+                $data = $this->M_login->cek_login('admin', $where)->row();
+                if ($cek > 0) {
+                    $data_session = array(
+                        'id' => $data->id,
+                        'username' => $data->username,
+                        'status' => 'admin_login'
+                    );
+                    $this->session->set_userdata($data_session);
+                    redirect('Dashboard');
+                } else {
+                    redirect('Login?alert=gagal');
+                }
+            } elseif ($sebagai == 'user') {
+                $cek = $this->M_login->cek_login('user', $where)->num_rows();
+                $data = $this->M_login->cek_login('user', $where)->row();
+                if ($cek > 0) {
+                    $data_session = array(
+                        'id' => $data->id,
+                        'username' => $data->username,
+                        'status' => 'user_login'
+                    );
+                    $this->session->set_userdata($data_session);
+                    redirect('Dashboard');
+                } else {
+                    redirect('Login?alert=gagal');
+                }
+            }
+        } else {
+            $data['judul'] = 'Login Page';
+            $this->load->view('Templates/Header_login', $data);
+            $this->load->view('V_login');
+            $this->load->view('Templates/Footer_login');
         }
     }
     function logout()

@@ -7,7 +7,13 @@
             <div class="profile-usertitle-name">
                 <?= $this->session->userdata('username'); ?>
             </div>
-            <div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+            <?php
+            if ($this->session->userdata('status')) {
+                echo "<div class='profile-usertitle-status'><span class='indicator label-success'></span>Online</div>";
+            } else {
+                echo "<div class='profile-usertitle-status'><span class='indicator label-danger'></span>Offline</div>";
+            }
+            ?>
         </div>
         <div class="clear"></div>
     </div>
@@ -21,28 +27,34 @@
         }
         ?><a href="<?= base_url('Dashboard'); ?>"><em class="fa fa-fw fa-dashboard">&nbsp;</em> Dashboard</a></li>
         <?php
-        if ($this->uri->segment('1') == 'Admin') {
-            echo "<li class='parent active'>";
-        } elseif ($this->uri->segment('1') == 'User') {
-            echo "<li class='parent active'>";
-        } else {
-            echo "<li class='parent'>";
-        }
-        ?><a data-toggle="collapse" href="#sub-item-1">
-            <em class="fa fa-fw fa-users">&nbsp;</em> System Manager <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+        if ($this->session->userdata('status') == 'admin_login') {
+            if ($this->uri->segment('1') == 'Admin') {
+                echo "<li class='parent active'>";
+            } elseif ($this->uri->segment('1') == 'User') {
+                echo "<li class='parent active'>";
+            } else {
+                echo "<li class='parent'>";
+            }
+            echo "<a data-toggle='collapse' href='#sub-item-1'>
+            <em class='fa fa-fw fa-users'>&nbsp;</em> System Manager <span data-toggle='collapse' href='#sub-item-1' class='icon pull-right'><em class='fa fa-plus'></em></span>
         </a>
-        <ul class="children collapse" id="sub-item-1">
+        <ul class='children collapse' id='sub-item-1'>
             <li>
-                <a class="" href="#">
-                    <span class="fa fa-fw fa-angle-double-right">&nbsp;</span> Admin
+                <a class='' href='";
+            echo base_url('Admin');
+            echo "
+                '>
+                    <span class='fa fa-fw fa-angle-double-right'>&nbsp;</span> Admin
                 </a>
             </li>
             <li>
-                <a class="" href="#">
-                    <span class="fa fa-fw fa-angle-double-right">&nbsp;</span> User
+                <a class='' href='#'>
+                    <span class='fa fa-fw fa-angle-double-right'>&nbsp;</span> User
                 </a>
             </li>
-        </ul>
+        </ul>";
+        }
+        ?>
         <?php
         if ($this->uri->segment('1') == 'Score') {
             echo "<li class='active'>";
