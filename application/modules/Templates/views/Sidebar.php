@@ -48,7 +48,9 @@
                 </a>
             </li>
             <li>
-                <a class='' href='#'>
+                <a class='' href='";
+            echo base_url('User');
+            echo "'>
                     <span class='fa fa-fw fa-angle-double-right'>&nbsp;</span> User
                 </a>
             </li>
