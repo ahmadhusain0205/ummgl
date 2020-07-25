@@ -21,6 +21,29 @@
         }
         ?><a href="<?= base_url('Dashboard'); ?>"><em class="fa fa-fw fa-dashboard">&nbsp;</em> Dashboard</a></li>
         <?php
+        if ($this->uri->segment('1') == 'Admin') {
+            echo "<li class='parent active'>";
+        } elseif ($this->uri->segment('1') == 'User') {
+            echo "<li class='parent active'>";
+        } else {
+            echo "<li class='parent'>";
+        }
+        ?><a data-toggle="collapse" href="#sub-item-1">
+            <em class="fa fa-fw fa-users">&nbsp;</em> System Manager <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+        </a>
+        <ul class="children collapse" id="sub-item-1">
+            <li>
+                <a class="" href="#">
+                    <span class="fa fa-fw fa-angle-double-right">&nbsp;</span> Admin
+                </a>
+            </li>
+            <li>
+                <a class="" href="#">
+                    <span class="fa fa-fw fa-angle-double-right">&nbsp;</span> User
+                </a>
+            </li>
+        </ul>
+        <?php
         if ($this->uri->segment('1') == 'Score') {
             echo "<li class='active'>";
         } else {
