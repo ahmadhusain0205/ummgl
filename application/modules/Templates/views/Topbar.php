@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span></button>
-                <a class="navbar-brand" href="#"><span>UM</span>Magelang</a>
+                <a class="navbar-brand" href="<?= base_url('Dashboard'); ?>"><span>UM</span>Magelang</a>
             </div>
         </div>
     </nav>
