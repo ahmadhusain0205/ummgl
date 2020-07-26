@@ -115,7 +115,7 @@ foreach ($admin as $a) :
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="text" class="form-control form-control-user" name="password" id="password" placeholder="Input Password" required value="<?= $a->password; ?>">
+                            <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Input Password" required value="<?= $a->password; ?>">
                         </div>
                     </div>
                     <div class="modal-footer">
