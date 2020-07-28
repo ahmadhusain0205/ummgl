@@ -36,7 +36,18 @@ class Semester1 extends CI_Controller
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>');
-        redirect('Semester1');
+
+        if ($this->input->post('semester') == '5') {
+            redirect('Semester5');
+        } else if ($this->input->post('semester') == '4') {
+            redirect('Semester4');
+        } else if ($this->input->post('semester') == '3') {
+            redirect('Semester3');
+        } else if ($this->input->post('semester') == '2') {
+            redirect('Semester2');
+        } else {
+            redirect('Semester1');
+        }
     }
     function edit()
     {
@@ -51,7 +62,17 @@ class Semester1 extends CI_Controller
         );
         $this->db->where('id', $id);
         $this->db->update('semester', $data);
-        redirect('Semester1');
+        if ($this->input->post('semester') == '5') {
+            redirect('Semester5');
+        } else if ($this->input->post('semester') == '4') {
+            redirect('Semester4');
+        } else if ($this->input->post('semester') == '3') {
+            redirect('Semester3');
+        } else if ($this->input->post('semester') == '2') {
+            redirect('Semester2');
+        } else {
+            redirect('Semester1');
+        }
     }
     function delete($id)
     {

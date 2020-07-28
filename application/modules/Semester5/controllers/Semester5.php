@@ -1,21 +1,21 @@
 <?php
-class Semester2 extends CI_Controller
+class Semester5 extends CI_Controller
 {
     function __construct()
     {
         parent::__construct();
-        $this->load->model('M_semester2');
+        $this->load->model('M_semester5');
         $this->form_validation->set_rules('grade', 'Grade', 'required');
     }
     function index()
     {
-        $data['semester2'] = $this->M_semester2->get_data('semester')->result();
-        $data['course'] = $this->M_semester2->get('course')->result();
-        $data['score'] = $this->M_semester2->get('score')->result();
-        $data['judul'] = 'Semester Page 2';
+        $data['semester5'] = $this->M_semester5->get_data('semester')->result();
+        $data['course'] = $this->M_semester5->get('course')->result();
+        $data['score'] = $this->M_semester5->get('score')->result();
+        $data['judul'] = 'Semester Page 5';
         $this->load->view('Templates/Topbar', $data);
         $this->load->view('Templates/Sidebar', $data);
-        $this->load->view('V_semester2');
+        $this->load->view('V_semester5');
         $this->load->view('Templates/Footer');
     }
     function tambah()
@@ -28,7 +28,7 @@ class Semester2 extends CI_Controller
             'id_score' => $id_score,
             'semester' => $semester
         );
-        $this->M_semester2->insert($data, 'semester');
+        $this->M_semester5->insert($data, 'semester');
         $this->session->set_flashdata('message', '
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 Data <b>Berhasil</b> di tambah
@@ -76,7 +76,7 @@ class Semester2 extends CI_Controller
     function delete($id)
     {
         $where = array('id' => $id);
-        $this->M_semester2->delete($where, 'semester');
+        $this->M_semester5->delete($where, 'semester');
         $this->session->set_flashdata('message', '
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 Data <b>Berhasil</b> di hapus
@@ -84,6 +84,6 @@ class Semester2 extends CI_Controller
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>');
-        redirect('Semester2');
+        redirect('Semester5');
     }
 }

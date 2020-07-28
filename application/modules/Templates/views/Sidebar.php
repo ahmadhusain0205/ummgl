@@ -102,17 +102,17 @@
                 </a>
             </li>
             <li>
-                <a class="" href="#">
+                <a class="" href="<?= base_url('Semester3'); ?>">
                     <span class="fa fa-fw fa-angle-double-right">&nbsp;</span> Semester 3
                 </a>
             </li>
             <li>
-                <a class="" href="#">
+                <a class="" href="<?= base_url('Semester4'); ?>">
                     <span class="fa fa-fw fa-angle-double-right">&nbsp;</span> Semester 4
                 </a>
             </li>
             <li>
-                <a class="" href="#">
+                <a class="" href="<?= base_url('Semester5'); ?>">
                     <span class="fa fa-fw fa-angle-double-right">&nbsp;</span> Semester 5
                 </a>
             </li>
