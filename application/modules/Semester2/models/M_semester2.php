@@ -7,6 +7,7 @@ class M_semester2 extends CI_Model
         $this->db->FROM('semester');
         $this->db->JOIN('course', 'semester.id_course=course.id');
         $this->db->JOIN('score', 'semester.id_score=score.id');
+        $this->db->where('semester', '2');
         return $this->db->get();
     }
     function get($table)
