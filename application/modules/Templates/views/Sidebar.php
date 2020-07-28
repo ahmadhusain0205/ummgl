@@ -97,7 +97,7 @@
                 </a>
             </li>
             <li>
-                <a class="" href="#">
+                <a class="" href="<?= base_url('Semester2'); ?>">
                     <span class="fa fa-fw fa-angle-double-right">&nbsp;</span> Semester 2
                 </a>
             </li>
