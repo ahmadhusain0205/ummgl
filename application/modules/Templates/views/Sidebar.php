@@ -1,21 +1,23 @@
 <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
     <div class="profile-sidebar">
-        <div class="profile-userpic">
-            <img class="img-profile rounded-circle" src="<?= base_url('assets/img/profile/profile.jpg'); ?>">
-        </div>
-        <div class="profile-usertitle">
-            <div class="profile-usertitle-name">
-                <?= $this->session->userdata('username'); ?>
+        <a href="<?= base_url('Edit'); ?>">
+            <div class="profile-userpic">
+                <img class="img-profile rounded-circle" src="<?= base_url('assets/img/profile/profile.jpg'); ?>">
             </div>
-            <?php
-            if ($this->session->userdata('status')) {
-                echo "<div class='profile-usertitle-status'><span class='indicator label-success'></span>Online</div>";
-            } else {
-                echo "<div class='profile-usertitle-status'><span class='indicator label-danger'></span>Offline</div>";
-            }
-            ?>
-        </div>
-        <div class="clear"></div>
+            <div class="profile-usertitle">
+                <div class="profile-usertitle-name">
+                    <?= $this->session->userdata('username'); ?>
+                </div>
+                <?php
+                if ($this->session->userdata('status')) {
+                    echo "<div class='profile-usertitle-status'><span class='indicator label-success'></span>Online</div>";
+                } else {
+                    echo "<div class='profile-usertitle-status'><span class='indicator label-danger'></span>Offline</div>";
+                }
+                ?>
+            </div>
+            <div class="clear"></div>
+        </a>
     </div>
     <div class="divider"></div>
     <ul class="nav menu">
