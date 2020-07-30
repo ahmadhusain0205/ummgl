@@ -9,17 +9,20 @@
                 </div>
                 <div class="card-body">
                     <?php foreach ($user as $u) : ?>
-                        <div class="form-group">
-                            <label for="username">Username</label>
-                            <input type="text" class="form-control form-control" name="username" id="username" placeholder="Input Username" required value="<?= $u->username; ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control form-control" name="password" id="password" placeholder="Input Password" required value="<?= $u->password; ?>">
-                        </div>
-                        <a href="<?= base_url('Edit/ubah'); ?>" type="button" class="btn btn-sm btn-warning shadow mb-4">
-                            <i class="fa fa-save"></i> Save
-                        </a>
+                        <form method="POST" class="user" action="<?= base_url('Edit/ubah'); ?>">
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="hidden" name="id" value="<?= $u->id; ?>">
+                                    <input type="text" class="form-control form-control-user" name="username" id="username" placeholder="Input Username" required value="<?= $u->username; ?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control form-control-user" name="password" id="password" placeholder="Input Password" required value="<?= $u->password; ?>">
+                                </div>
+                                <button type="submit" class="btn btn-success">Save</button>
+                            </div>
+                        </form>
                     <?php endforeach; ?>
                 </div>
             </div>
