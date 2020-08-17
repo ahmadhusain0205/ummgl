@@ -120,7 +120,7 @@
             </li>
         </ul>
         </li>
-        <li><a href="#"><em class="fa fa-fw fa-firefox">&nbsp;</em> IP</a></li>
+        <li><a href="<?= base_url('Ip'); ?>"><em class="fa fa-fw fa-firefox">&nbsp;</em> IP</a></li>
         <li><a href="<?= base_url('Login/logout'); ?>"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
     </ul>
 </div>
